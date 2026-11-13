@@ -17,13 +17,13 @@ namespace
 
     Color colorTable[] =
     {
-        Color(1, 1, 1),
-        Color(1, 1, 0),
-        Color(1, 0, 1),
-        Color(0, 1, 1),
-        Color(0.5, 0, 0),
-        Color(0, 0.5, 0),
-        Color(0, 0, 0.5),
+        Color(1, 1, 2),
+        Color(2, 1, 0),
+        Color(1, 0, 2),
+        Color(0, 2, 1),
+        Color(0.5, 0, 1),
+        Color(1, 0.5, 0),
+        Color(0, 1, 0.5),
     };
     constexpr int tableSize = sizeof(colorTable) / sizeof(Color);
 }
@@ -48,7 +48,10 @@ void CBController::Update()
     {
         colorIndex = (colorIndex + 1) % tableSize;
     }
-
+    if (Input::GetKeyDown(Keyboard::Up))
+    {
+        colorIndex = (colorIndex -1) % tableSize;
+    }
 
     CBParam cb;
 
